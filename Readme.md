@@ -1,3 +1,3 @@
-#CHIP8 Interpreter
+# CHIP8 Interpreter
 
-Implementation of CHIP8 interpreter in Javascript
+Implementation of CHIP-8 interpreter in Javascript
