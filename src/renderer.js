@@ -28,7 +28,7 @@ class Renderer{
         this.ctx.fillStyle = this.fillColor;
         for( let i = 0; i < this.buffer.length; i++ ){
             if( this.buffer[i] ){
-                let x = i % this.cols * this.scale;
+                let x = (i % this.cols) * this.scale;
                 let y = Math.floor(i / this.cols) * this.scale;
                 this.ctx.fillRect(x,y,this.scale,this.scale);
             }

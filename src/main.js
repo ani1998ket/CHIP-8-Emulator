@@ -6,7 +6,7 @@ import CPU from "./cpu.js";
 const renderer = new Renderer(10);
 const speaker = new Speaker();
 const keyboard = new Keyboard();
-const cpu = new CPU( renderer,speaker, keyboard );
+const cpu = new CPU( renderer, keyboard, speaker );
 
 const fps = 60;
 let currentTime, lastTime, elapsedTime;
@@ -14,7 +14,7 @@ let loop;
 
 function init(){
     lastTime = Date.now();
-    cpu.loadRom("test1.ch8");
+    cpu.loadRom("BLINKY.ch8");
     loop = window.requestAnimationFrame( step );
 }
 
