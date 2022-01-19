@@ -13,7 +13,7 @@ class CPU{
         this.keyboard = keyboard;
         this.speaker = speaker;
 
-        this.speed = 10;
+        this.speed = 50;
 
         this.loadFonts()
     }
@@ -112,12 +112,12 @@ class CPU{
                 this.PC = nnn;
                 break;
             case 0x3000:
-                if( V[x] == kk ){
+                if( this.V[x] == kk ){
                     this.PC += 2;
                 }
                 break;
             case 0x4000:
-                if( V[x] != kk ){
+                if( this.V[x] != kk ){
                     this.PC += 2;
                 }
                 break;
@@ -217,10 +217,14 @@ class CPU{
             case 0xE000:
                 switch( opcode & 0xFF ){
                     case 0x9E:
-                        //...some code here...
+                        if( this.keyboard.isKeyPressed(this.V[x])){
+                            this.PC += 2;
+                        }
                         break;
                     case 0xA1:
-                        //...some code here...
+                        if( !this.keyboard.isKeyPressed(this.V[x])){
+                            this.PC += 2;
+                        }
                         break;
                 } 
                 break;
