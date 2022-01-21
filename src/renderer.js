@@ -23,7 +23,7 @@ class Renderer{
     }
 
     render(){
-        this.ctx.fillStyle = "#999DA030";
+        this.ctx.fillStyle = "#999DA0FF";
         this.ctx.fillRect( 0, 0, this.canvas.width, this.canvas.height );
         this.ctx.fillStyle = this.fillColor;
         for( let i = 0; i < this.buffer.length; i++ ){
