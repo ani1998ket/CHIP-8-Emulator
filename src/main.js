@@ -16,6 +16,7 @@ function init(){
     lastTime = Date.now();
     cpu.loadRom("BLINKY.ch8");
     loop = window.requestAnimationFrame( step );
+    speaker.play(440);
 }
 
 function step(){
@@ -29,5 +30,7 @@ function step(){
     }
     loop = window.requestAnimationFrame( step );
 }
-
+window.setTimeout(()=>{
+    speaker.stop();
+}, 2000);
 init();
